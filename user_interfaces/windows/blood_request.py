@@ -5,6 +5,9 @@ from functools import partial
 from queries.blood_request import check_availability
 
 def show_availability(window):
+    """
+    User interface for 'Blood Request' button.
+    """
     availability_window = tk.Toplevel(window)
     availability_window.title("Check Blood Availability")
 

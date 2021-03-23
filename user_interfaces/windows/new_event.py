@@ -1,14 +1,15 @@
 import tkinter as tk
 from tkinter import ttk
 from tkinter import *
-
-from functools import partial
 from tkcalendar import DateEntry
 
+from functools import partial
 from queries.new_event import add_event
 
-
-def add_new_records(window):
+def add_new_event(window):
+    """
+    Creates UI for adding new event.
+    """
     add_events_window = tk.Toplevel(window)
     add_events_window.title("Add Events")
 

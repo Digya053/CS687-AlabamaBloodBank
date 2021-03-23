@@ -5,6 +5,11 @@ from functools import partial
 from queries.delete_event import delete_checkbox
 
 def delete_scheduled_events(window):
+
+    """
+    User Interface for 'Delete Scheduled Blood Donation Event' button.
+    """
+
     delete_window = tk.Toplevel(window)
     delete_window.title("Delete Scheduled Event")
     Label(delete_window, text="Select Event").grid(row=0, column=1)

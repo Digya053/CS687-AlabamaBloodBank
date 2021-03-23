@@ -5,6 +5,11 @@ from datetime import date
 from user_interfaces.tables.treeview import TreeView
 
 def upcoming_events():
+
+    """
+    Displays all upcoming blood donation events.
+    """
+    
     now = date.today()
 
     con = connection.Connection()

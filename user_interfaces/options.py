@@ -1,18 +1,25 @@
-import tkinter as tk
 from user_interfaces.windows.blood_request import show_availability
 from user_interfaces.windows.delete_event import delete_scheduled_events
 from user_interfaces.windows.donation_records import view_donation_records
 from user_interfaces.windows.organizer_details import organizer_details
-from user_interfaces.windows.new_event import add_new_records
+from user_interfaces.windows.new_event import add_new_event
+from user_interfaces.windows.display_scheduled_events import display_saved_events
+
 from queries.donate_blood import donate
-from queries.display_scheduled_events import display_saved_events
 from queries.blood_request_records import request_records
 from queries.upcoming_events import upcoming_events
 from queries.past_events import past_events
+
+import tkinter as tk
 from functools import partial
 
 
 def view_options(window):
+
+    """
+    Creates UI for Options Page after Login.
+    """
+    
     options_window = tk.Toplevel(window)
     options_window.title("Options")
 
@@ -22,7 +29,7 @@ def view_options(window):
     window_delete_scheduled_blood_donation = partial(delete_scheduled_events, window)
     window_view_donation_records = partial(view_donation_records, window)
     window_view_organizer_details = partial(organizer_details, window)
-    window_add_new_event = partial(add_new_records, window)
+    window_add_new_event = partial(add_new_event, window)
 
     button1 = tk.Button(options_window, text = "Blood Request", height=3, width=40, command=window_show_availability)
     button1.place(x=500, y=100)

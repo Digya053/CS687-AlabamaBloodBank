@@ -4,6 +4,9 @@ import tkinter as tk
 from tkinter.ttk import Treeview, Scrollbar
 
 class TreeView:
+    """
+    Constructs table.
+    """
     def __init__(self, columns, data, title):
         self.root = tk.Tk()
         self.root.title(title)

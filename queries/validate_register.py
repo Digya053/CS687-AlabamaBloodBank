@@ -2,6 +2,9 @@ from db_connection import connection
 from tkinter import messagebox
 
 def validate_and_insert_users(fname, mnit,lname, dob, city, bloodtype, gender, email, password, confirmpassword, weight, height, ssn, hmembership_no):
+    """
+    Add user information into the database.
+    """
     fname = fname.get()
     mnit = mnit.get()
     lname = lname.get()

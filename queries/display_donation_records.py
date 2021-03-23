@@ -1,12 +1,13 @@
-from db_connection import connection
-from tkinter import messagebox
-from user_interfaces.tables.treeview import TreeView
-import tkinter as tk
-from tkinter import *
-
 from datetime import date
+from tkinter import messagebox
+
+from db_connection import connection
+from user_interfaces.tables.treeview import TreeView
 
 def show_donation_records(cal, city):
+    """
+    Query to display all donation records within Alabama Blood Bank.
+    """
     today = date.today()
 
     con = connection.Connection()

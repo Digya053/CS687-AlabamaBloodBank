@@ -1,12 +1,16 @@
-from db_connection import connection
 from tkinter import messagebox
+
+from db_connection import connection
 from user_interfaces.options import view_options
 
 def login_user(window, email, password):
+
+    """
+    Login the user.
+    """
+    
     email = email.get()
     password = password.get()
-    print("email entered :", email)
-    print("password entered :", password)
 
     con = connection.Connection()
 

@@ -1,13 +1,15 @@
 import tkinter as tk
 from tkinter import ttk
 from tkinter import *
-
-from functools import partial
 from tkcalendar import DateEntry
 
+from functools import partial
 from queries.organizer_details import display_organizer_info
 
 def organizer_details(window):
+    """
+    Creates UI for displaying organizer details.
+    """
     organizer_window = tk.Toplevel(window)
     organizer_window.title("View Organizer")
 

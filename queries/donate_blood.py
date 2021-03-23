@@ -2,7 +2,6 @@ import tkinter as tk
 from tkinter import *
 
 from functools import partial
-from queries.blood_request import check_availability
 from queries.save_event import save
 
 from db_connection import connection
@@ -11,6 +10,9 @@ from tkinter import messagebox
 from datetime import date
 
 def donate(window):
+    """
+    Creates UI selection buttons for scheduling donation.
+    """
     schedule_window = tk.Toplevel(window)
     schedule_window.title("Schedule Blood Donation")
     Label(schedule_window, text="Select Events").grid(row=0, column=1)

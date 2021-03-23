@@ -1,14 +1,18 @@
 import tkinter as tk
 from tkinter import ttk
 from tkinter import *
-
-from functools import partial
 from tkcalendar import DateEntry
 
+from functools import partial
 from queries.display_donation_records import show_donation_records
 
 
 def view_donation_records(window):
+
+    """
+    Creates UI for viewing donation records.
+    """
+    
     donation_records_window = tk.Toplevel(window)
     donation_records_window.title("View Donation Records")
 

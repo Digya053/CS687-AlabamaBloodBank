@@ -5,6 +5,11 @@ from datetime import date
 from user_interfaces.tables.treeview import TreeView
 
 def show_donation_records(cal, city):
+
+    """
+    Query to display all donation records in Alabama Blood Bank
+    """
+    
     today = date.today()
 
     con = connection.Connection()

@@ -1,8 +1,12 @@
-from db_connection import connection
 from tkinter import messagebox
+
+from db_connection import connection
 from user_interfaces.tables.treeview import TreeView
 
 def request_records():
+    """
+    Displays user records who has requested the blood unit.
+    """
     con = connection.Connection()
 
     query = "SELECT r.fname, r.mnit, r.lname, r.dob, r.city, r.blood_type, r.gender, bs.blood_type, bs.quantity_in_ml, bs.storage_id FROM REGISTERED_USERS AS r, BLOOD AS b, ALABAMA_BLOOD_STORAGE AS bs WHERE bs.storage_id=b.storage_id AND b.ssn=r.ssn;"

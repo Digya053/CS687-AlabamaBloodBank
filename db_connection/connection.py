@@ -2,6 +2,27 @@ import MySQLdb
 import yaml
 
 class Connection:
+    """
+    Creates connection to mysql server.
+
+    Methods
+    -------
+    execute_command(self, query)
+        Executes the query.
+
+    close_connection(self)
+        Closes connection with mysql server.
+
+    commit_changes(self)
+        Saves the database state after the query has been executed into the database.
+    
+    fetch_one(self)
+        Fetch one result of query
+
+    fetch_all(self)
+        Fetch all results of query
+    """
+    
     def __init__(self):
         yamlfile = 'config/mysql_config.yaml'
         

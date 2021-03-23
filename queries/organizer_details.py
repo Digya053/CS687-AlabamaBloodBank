@@ -1,7 +1,10 @@
-from db_connection import connection
 from tkinter import messagebox
+from db_connection import connection
 
 def display_organizer_info(organizers, eventname, cal, city, street):
+    """
+    Displays organizer information.
+    """
     con = connection.Connection()
 
     query = "SELECT o.organizer_name, o.contact_no, o.email, e.event_name, e.date, e.street, e.city FROM ORGANIZERS as o, BLOOD_DONATION_EVENT as e WHERE o.organizer_id=e.organizer_id AND e.event_name= '" + str(eventname.get()) + "' AND e.date= '" + str(cal.get()) + "' AND e.street = '" + str(street.get()) + "' AND e.city = '" + str(city.get()) + "';"

@@ -1,10 +1,16 @@
-from db_connection import connection
 from tkinter import messagebox
 
-from datetime import date
+from db_connection import connection
 from user_interfaces.tables.treeview import TreeView
 
+from datetime import date
+
 def past_events():
+    
+    """
+    Displays all past blood donation events.
+    """
+
     now = date.today()
 
     con = connection.Connection()

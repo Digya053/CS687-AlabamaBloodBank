@@ -3,14 +3,24 @@ from tkinter import *
 
 from functools import partial
 from PIL import ImageTk, Image
+from tkcalendar import DateEntry
 
 from queries.validate_register import validate_and_insert_users
 from queries.validate_login import login_user
-from tkcalendar import DateEntry
 
-
-# This creates the main window and home page of the application
 class Window:
+    """
+    This creates the main window and home page of the application
+
+    Attributes
+    -----------
+    window : tkinter window
+
+    Methods
+    --------
+    return_window
+        Returns the main window
+    """
     def __init__(self, window):
         self.window = window
 
@@ -45,11 +55,10 @@ class Window:
 
 
 def register_clicked(event):
-    #print("register pressed")
     register_window = tk.Toplevel(window)
     register_window.title("Registration Page")
 
-    #username label and text entry box
+    #Fields and text entry box for registering users
     fnamelabel = Label(register_window, text="First Name*").grid(row=0, column=0)
     fname = StringVar()
     fnameEntry = Entry(register_window, textvariable=fname).grid(row=0, column=1)
@@ -101,7 +110,6 @@ def register_clicked(event):
 
     ssnlabel = Label(register_window, text="SSN*").grid(row=13, column=0)
     ssn = IntVar()
-    print(ssn)
     ssnEntry = Entry(register_window, textvariable=ssn).grid(row=13, column=1)
 
     hmembership_nolabel = Label(register_window, text="Hospital Membership Number*").grid(row=12, column=0)
@@ -110,6 +118,7 @@ def register_clicked(event):
 
     validater = partial(validate_and_insert_users, fname,mnit,lname,dob,city,bloodtype,gender,email,password,confirmpassword,weight,height,ssn, hmembership_no)
 
+    #register button
     registerButton = Button(register_window, text="Register", command=validater)
     registerButton.grid(row=20, column=3)
 

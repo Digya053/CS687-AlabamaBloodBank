@@ -7,10 +7,13 @@ from datetime import date
 
 def delete_checkbox(ssn, delete_window):
 
+    """
+    Query to generate the events which are scheduled from which some events are to be deleted.
+    """
+
     today_date = date.today()
 
     con = connection.Connection()
-
     query = "SELECT e.event_id, e.event_name, e.date, e.street, e.city FROM BLOOD_DONATION_EVENT AS e, PARTICIPATES_IN AS p WHERE p.pssn = '" + str(ssn.get())  + "' AND p.event_id=e.event_id;"
     try:
         con.execute_command(query)
@@ -35,11 +38,13 @@ def delete_checkbox(ssn, delete_window):
 
 
     validate_s = partial(check_delete,i,ssn, con)
-
-
     delete_records = Button(delete_window, text = "Delete Event",command=validate_s).grid(row=len(combined_text_list)+5,column=3)
 
 def check_delete(i, ssn, con):
+
+    """
+    Query to generate delete the event from users event schedule.
+    """
 
     query = "DELETE FROM PARTICIPATES_IN as p WHERE p.event_id = " + i.get() + " AND p.pssn = '" + str(ssn.get()) + "';"
     try:

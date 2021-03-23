@@ -2,7 +2,10 @@ from db_connection import connection
 from tkinter import messagebox
 
 def add_event(event_id, event_name, cal, street, city, organizer_name):
-
+        
+        """Adds new event to the database.
+        """
+        
         con = connection.Connection()
         try:
             query_one = "SELECT o.organizer_id FROM ORGANIZERS AS o WHERE o.organizer_name = '" + organizer_name.get() + "';"

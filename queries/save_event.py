@@ -1,9 +1,12 @@
-from db_connection import connection
 from tkinter import messagebox
 
-def save(i,ssn):
-    print("You selected an option")
-    print(i.get()) 
+from db_connection import connection
+
+def save(i, ssn):
+
+    """
+    Inserts user as a participant of selected blood donation event.
+    """
 
     con = connection.Connection()
 
