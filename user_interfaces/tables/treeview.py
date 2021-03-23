@@ -39,4 +39,3 @@ class TreeView:
         self.my_tree.configure(xscrollcommand=hsb.set)
 
         self.root.mainloop()
-

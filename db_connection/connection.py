@@ -7,8 +7,6 @@ class Connection:
         
         with open(yamlfile, "r") as yamlfile:
             data = yaml.load(yamlfile, Loader=yaml.FullLoader)
-            print(data)
-            print("Read successful")
 
             self.host = data[0]['dbinfo']['dbhost']
             self.user = data[0]['dbinfo']['dbusername']
