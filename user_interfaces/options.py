@@ -3,6 +3,7 @@ from user_interfaces.windows.blood_request import show_availability
 from user_interfaces.windows.delete_event import delete_scheduled_events
 from user_interfaces.windows.donation_records import view_donation_records
 from user_interfaces.windows.organizer_details import organizer_details
+from user_interfaces.windows.new_event import add_new_records
 from queries.donate_blood import donate
 from queries.display_scheduled_events import display_saved_events
 from queries.blood_request_records import request_records
@@ -21,6 +22,7 @@ def view_options(window):
     window_delete_scheduled_blood_donation = partial(delete_scheduled_events, window)
     window_view_donation_records = partial(view_donation_records, window)
     window_view_organizer_details = partial(organizer_details, window)
+    window_add_new_event = partial(add_new_records, window)
 
     button1 = tk.Button(options_window, text = "Blood Request", height=3, width=40, command=window_show_availability)
     button1.place(x=500, y=100)
@@ -40,5 +42,7 @@ def view_options(window):
     button8.place(x=500, y=506)
     button9 = tk.Button(options_window, text = "View Past Blood Donation Events", height=3, width=40, command=past_events)
     button9.place(x=500, y=564)
+    button10 = tk.Button(options_window, text = "Add New Event", height=3, width=40, command=window_add_new_event)
+    button10.place(x=500, y=622)
 
     options_window.mainloop

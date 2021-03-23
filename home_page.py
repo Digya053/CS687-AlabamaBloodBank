@@ -120,7 +120,7 @@ def login_clicked(event):
     login_window = tk.Toplevel(window)
     login_window.title("Login Page")
     
-    #username label and text entry box
+    #email label and text entry box
     emailLabel = Label(login_window, text="Email").grid(row=0, column=0)
     email = StringVar()
     emailEntry = Entry(login_window, textvariable=email).grid(row=0, column=1)  
@@ -138,8 +138,6 @@ def login_clicked(event):
     login_window.mainloop
     return 
 
-
-
 window = tk.Tk()
 window.title("Welcome to Alabama Blood Bank")
 window.attributes('-fullscreen', True)
@@ -148,5 +146,3 @@ window.configure(background='#FFFFFF')
 w = Window(window)
 
 window.mainloop()
-
-    #window.mainloop
