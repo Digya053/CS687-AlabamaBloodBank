@@ -4,8 +4,6 @@ from tkinter import *
 from functools import partial
 from PIL import ImageTk, Image
 
-from user_interfaces.windows import user_login
-
 from queries.validate_register import validate_and_insert_users
 from queries.validate_login import login_user
 from tkcalendar import DateEntry
